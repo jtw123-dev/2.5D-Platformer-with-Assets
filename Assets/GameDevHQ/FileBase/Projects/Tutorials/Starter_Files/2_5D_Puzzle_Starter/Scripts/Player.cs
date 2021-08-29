@@ -15,10 +15,11 @@ public class Player : MonoBehaviour
     private float _yVelocity;
     private bool _canDoubleJump = false;
     [SerializeField]
-    private int _coins;
+    public int _coins;
     private UIManager _uiManager;
     [SerializeField]
     private int _lives = 3;
+
 
     // Start is called before the first frame update
     void Start()
@@ -71,8 +72,12 @@ public class Player : MonoBehaviour
     public void AddCoins()
     {
         _coins++;
-
+       
         _uiManager.UpdateCoinDisplay(_coins);
+    }
+    public int CoinCount()
+    {
+         return _coins ;
     }
 
     public void Damage()
